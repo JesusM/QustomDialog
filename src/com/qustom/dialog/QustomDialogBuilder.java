@@ -58,6 +58,11 @@ public class QustomDialogBuilder extends AlertDialog.Builder{
     	mTitle.setTextColor(Color.parseColor(colorString));
     	return this;
     }
+    
+    public QustomDialogBuilder setTitleColor(int color) {
+        mTitle.setTextColor((color));
+        return this;
+    }
 
     @Override
     public QustomDialogBuilder setMessage(int textResId) {
@@ -68,6 +73,7 @@ public class QustomDialogBuilder extends AlertDialog.Builder{
     @Override
     public QustomDialogBuilder setMessage(CharSequence text) {
         mMessage.setText(text);
+        mMessage.setMovementMethod(new LinkMovementMethod());
         return this;
     }
 
